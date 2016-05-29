@@ -4,7 +4,7 @@ enablePlugins(ScalaJSPlugin)
 
 name := "diode"
 
-version := "2016.5.0-SNAPSHOT"
+version := "2016.5.0"
 
 organization := "com.github.chandu0101.sri"
 
@@ -12,9 +12,9 @@ scalaVersion := "2.11.8"
 
 val scalatestVersion = "3.0.0-M15"
 
-val sriVersion = "0.5.0-SNAPSHOT"
+val sriVersion = "0.5.0"
 
-val diodeVersion = "0.5.1"
+val diodeVersion = "0.5.2"
 
 libraryDependencies += "com.github.chandu0101.sri" %%% "core" % sriVersion
 

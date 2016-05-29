@@ -33,8 +33,8 @@ object ReactPot {
      * @param f Transforms duration time into a ReactNode
      * @return
      */
-//    def renderPending(f: Int => ReactNode): ReactNode =
-//      if (pot.isPending) f(pot.asInstanceOf[PendingBase].duration()) else null
+    def renderPending(f: Int => ReactNode): ReactNode =
+      if (pot.isPending) f(pot.asInstanceOf[PendingBase].duration()) else null
 
     /**
      * Render when Pot is pending with a filter on duration
@@ -43,12 +43,12 @@ object ReactPot {
      * @param f Transforms duration time into a ReactNode
      * @return
      */
-//    def renderPending(b: Int => Boolean, f: Int => ReactNode): ReactNode = {
-//      if (pot.isPending) {
-//        val duration = pot.asInstanceOf[PendingBase].duration()
-//        if (b(duration)) f(duration) else null
-//      } else null
-//    }
+    def renderPending(b: Int => Boolean, f: Int => ReactNode): ReactNode = {
+      if (pot.isPending) {
+        val duration = pot.asInstanceOf[PendingBase].duration()
+        if (b(duration)) f(duration) else null
+      } else null
+    }
 
     /**
      * Render when Pot has failed
