@@ -1,13 +1,16 @@
 package sri.diode
 
-import diode.{Circuit, ModelR}
+import diode.{ActionType, Circuit, ModelR, ModelRO}
 import sri.core.{ReactComponent, _}
 import sri.core.all._
+
 import scala.language.existentials
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{ExposedJSMember, JSName, ScalaJSDefined}
 
 object SriDiodeComponent {
+
+  implicit object aType extends ActionType[Any]
 
   @ScalaJSDefined
   class Component[M <: AnyRef, S <: AnyRef] extends ReactComponent[Props[M, S], S] {
@@ -26,7 +29,7 @@ object SriDiodeComponent {
 
     @JSName("sShouldComponentUpdate")
     @ExposedJSMember
-    override def shouldComponentUpdate(nextProps: => Props[M, S], nextState: => S): Boolean = {
+    override def shouldComponentUpdate(nextProps: => SriDiodeComponent.Props[M, S], nextState: => S): Boolean = {
       state ne nextState
     }
 
@@ -42,7 +45,7 @@ object SriDiodeComponent {
     private var isMounted: Boolean = false
 
 
-    private def changeHandler(cursor: ModelR[_, S]): Unit = {
+    private def changeHandler(cursor: ModelRO[S]): Unit = {
       // modify state if we are mounted and state has actually changed
       if (isMounted && cursor =!= state)
         setState(cursor.value)

@@ -2,24 +2,26 @@
 
 enablePlugins(ScalaJSPlugin)
 
-name := "diode"
+name := "sri-diode"
 
-version := "2016.5.0"
+version := "2016.11.0-SNAPSHOT"
 
-organization := "com.github.chandu0101.sri"
+organization := "com.github.chandu0101"
 
 scalaVersion := "2.11.8"
 
-val scalatestVersion = "3.0.0-M15"
+crossScalaVersions := Seq("2.11.8","2.12.0")
 
-val sriVersion = "0.5.0"
 
-val diodeVersion = "0.5.2"
+val scalatestVersion = "3.0.0"
 
-libraryDependencies += "com.github.chandu0101.sri" %%% "core" % sriVersion
+val sriVersion = "0.6.0-SNAPSHOT"
+
+val diodeVersion = "1.1.0"
+
+libraryDependencies += "com.github.chandu0101" %%% "sri-core" % sriVersion
 
 libraryDependencies += "me.chrons" %%% "diode" % diodeVersion
-
 
 relativeSourceMaps := true
 

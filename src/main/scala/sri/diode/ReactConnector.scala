@@ -46,6 +46,7 @@ trait ReactConnector[M <: AnyRef] {
    */
   def wrap[S <: AnyRef, C](modelReader: ModelR[_, S])(compB: ModelProxy[S] => ReactElement)
                           (implicit feq: FastEq[_ >: S]): ReactElement = {
+    implicit object aType extends ActionType[Any]
     compB(ModelProxy(modelReader, (action: AnyRef) => circuit.dispatch(action)))
   }
 
