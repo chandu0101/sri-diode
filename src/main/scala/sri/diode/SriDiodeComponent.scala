@@ -28,7 +28,6 @@ object SriDiodeComponent {
     }
 
     @JSName("sShouldComponentUpdate")
-    @ExposedJSMember
     override def shouldComponentUpdate(nextProps: => SriDiodeComponent.Props[M, S], nextState: => S): Boolean = {
       state ne nextState
     }
@@ -57,7 +56,6 @@ object SriDiodeComponent {
   val ctor = js.constructorOf[Component[_, _]]
 
   def apply[M <: AnyRef, S <: AnyRef](reader: ModelR[_, S], circuit: Circuit[M], compB: ModelProxy[S] => ReactElement) = createElement(ctor.asInstanceOf[ReactTypedConstructor[Any, _]], Props(reader, circuit, compB))
-
 
 }
 

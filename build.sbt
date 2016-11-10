@@ -4,10 +4,11 @@ enablePlugins(ScalaJSPlugin)
 
 name := "sri-diode"
 
-version := "2016.11.0-SNAPSHOT"
+version := "2016.11.0"
 
 organization := "com.github.chandu0101"
 
+//scalaVersion := "2.12.0"
 scalaVersion := "2.11.8"
 
 crossScalaVersions := Seq("2.11.8","2.12.0")
@@ -15,7 +16,7 @@ crossScalaVersions := Seq("2.11.8","2.12.0")
 
 val scalatestVersion = "3.0.0"
 
-val sriVersion = "0.6.0-SNAPSHOT"
+val sriVersion = "0.6.0"
 
 val diodeVersion = "1.1.0"
 
